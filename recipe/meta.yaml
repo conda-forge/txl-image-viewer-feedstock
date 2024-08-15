@@ -1,5 +1,5 @@
 {% set name = "txl-image-viewer" %}
-{% set version = "0.2.13" %}
+{% set version = "0.2.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/txl_image_viewer-{{ version }}.tar.gz
-  sha256: ddfe08b2ac62d1c9ab614f90a7a8611951346f186aec2aba170cf158ddcf093c
+  sha256: 96e911a22f01edbb4b1765f3a9800cdd0576f7e94f953385cd6b3130fc31764a
 
 build:
   noarch: python
