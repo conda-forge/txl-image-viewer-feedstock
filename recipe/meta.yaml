@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "txl-image-viewer" %}
-{% set version = "0.2.14" %}
+{% set version = "0.3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/txl_image_viewer-{{ version }}.tar.gz
-  sha256: 96e911a22f01edbb4b1765f3a9800cdd0576f7e94f953385cd6b3130fc31764a
+  sha256: ccb68d315379af48c0554694981eecfc9c129f7f8fb0d535ab17897e18b9fa3a
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
@@ -22,18 +22,15 @@ requirements:
     - hatchling
   run:
     - python >={{ python_min }}
-    - txl >=0.2.18,<0.3.0
+    - txl =0.3.2
     - textual-imageview >=0.1.1
 
 test:
-  # `pip check` was disabled, see: https://github.com/conda-forge/staged-recipes/pull/26869
-  #
-  # requires:
-  #   - pip
-  # commands:
-  #   - pip check
   requires:
+    - pip
     - python {{ python_min }}
+  commands:
+    - pip check
   imports:
     - txl_image_viewer
 
