@@ -28,10 +28,9 @@ requirements:
 test:
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
-  requires:
-    - python {{ python_min }}
   imports:
     - txl_image_viewer
 
