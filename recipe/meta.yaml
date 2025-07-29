@@ -22,16 +22,14 @@ requirements:
     - hatchling
   run:
     - python >={{ python_min }}
-    - txl >=0.2.18,<0.3.0
+    - txl =0.3.2
     - textual-imageview >=0.1.1
 
 test:
-  # `pip check` was disabled, see: https://github.com/conda-forge/staged-recipes/pull/26869
-  #
-  # requires:
-  #   - pip
-  # commands:
-  #   - pip check
+  requires:
+    - pip
+  commands:
+    - pip check
   requires:
     - python {{ python_min }}
   imports:
